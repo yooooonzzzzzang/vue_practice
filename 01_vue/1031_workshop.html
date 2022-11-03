@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="lunch">
+    <h1>점심메뉴</h1>
+    <button @click="pickLunch">Pick One</button><br>
+    {{ menu }}
+  </div>
+
+  <hr>
+  <div id="lotto">
+    <h1>로또</h1>
+    <button @click="getLotto">Get Lucky Numbers</button><br>
+    <p> {{ number }} </p>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const lunch = new Vue({
+      el: '#lunch',
+      data: {
+        menu: ['국밥', '짜장면', '햄버거']
+      },
+      methods: {
+        pickLunch: function () {
+
+        },
+      }
+    })
+
+    const lotto = new Vue({
+      el: '#lotto',
+      data: {
+
+      },
+      methods: {
+        getLotto: function () {
+
+        },
+
+      }
+
+    })
+  </script>
+</body>
+
+</html>
