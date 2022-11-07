@@ -1,36 +1,42 @@
 <template>
   <div id="app">
     <h1>Todo List</h1>
-    <h2>all todos: {{allTodosCount}} </h2>
-    <h2>completed todos: {{completedTodosCount}} </h2>
-    <h2>uncompleted todos: {{uncompletedTodosCount}} </h2>
-    <TodoList/>
-    <TodoForm/>
+    <h2>all todos: {{ allTodosCount }}</h2>
+    <h2>completed todos: {{ completedTodosCount }}</h2>
+    <h2>uncompleted todos: {{ uncompletedTodosCount }}</h2>
+    <TodoList />
+    <TodoForm />
+    <!-- <button @click="loadTodos">load todo</button> -->
   </div>
 </template>
 
 <script>
-import TodoList from '@/components/TodoList'
-import TodoForm from '@/components/TodoForm'
+import TodoList from "@/components/TodoList";
+import TodoForm from "@/components/TodoForm";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     TodoList,
     TodoForm,
   },
-  computed:{
-    allTodosCount(){
-      return this.$store.getters.allTodosCount 
+  computed: {
+    allTodosCount() {
+      return this.$store.getters.allTodosCount;
     },
-    completedTodosCount(){
-      return this.$store.getters.completedTodosCount
+    completedTodosCount() {
+      return this.$store.getters.completedTodosCount;
     },
-    uncompletedTodosCount(){
-      return this.$store.getters.uncompletedTodosCount
-    }
-  }
-}
+    uncompletedTodosCount() {
+      return this.$store.getters.uncompletedTodosCount;
+    },
+  },
+  methods: {
+    loadTodos() {
+      this.$store.dispatch("loadTodos");
+    },
+  },
+};
 </script>
 
 <style>
