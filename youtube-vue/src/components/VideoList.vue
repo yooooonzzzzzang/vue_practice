@@ -5,6 +5,7 @@
         v-for="(video, index) in videos"
         :key="`videoListItem-${index}`"
         :video="video"
+        @select-video-item="selectVideoItem"
       
       />
     </ul>
@@ -20,6 +21,11 @@ export default {
   },
   props:{
     videos: Array,
+  },
+  methods:{
+    selectVideoItem(video){
+      this.$emit("select-video-item", video)
+    }
   }
 }
 </script>

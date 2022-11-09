@@ -6,7 +6,8 @@
     <MainVideo
       :video="mainVideo"/>
     <VideoList
-      :videos="videos.slice(1)" />
+      :videos="videos.slice(1)" 
+      @select-video-item="onMainVideoChange" />
   </div>
 </template>
 
@@ -53,6 +54,9 @@ export default {
         .catch((error)=>{
           console.log(error)
         })
+    },
+    onMainVideoChange(video){
+      this.mainVideo =video
     }
   }
 }
